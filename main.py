@@ -45,6 +45,7 @@ def bracket_validator(text: str, brackets: List[tuple] = [('(', ')',), ('[', ']'
             if bracket.index(char) == 1:
                 if not stack.size():
                     return False
+                stack.pop()
             else:
                 stack.push(True)
     return not any([True for stack in stacks if stack.size() > 0])
